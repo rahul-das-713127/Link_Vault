@@ -317,7 +317,6 @@ Notes:
 ## Design Decisions
 
 - **SQLite** for simple local persistence.
-  - Easy to run locally for a take-home project.
   - No external services required.
 - **Files stored on disk**, metadata in DB.
   - Binary file bytes are stored in `backend/uploads/`.
@@ -347,8 +346,6 @@ Notes:
 - Tokens are stored in `sessionStorage` (tab-scoped) for the demo UX; closing the tab logs you out.
 - Manual delete is intentionally strict for owned shares:
   - If `owner_user_id` exists, only the owner JWT can delete (delete token is ignored).
-- No HTTPS enforcement (intended for local dev).
-- No CSRF protection (JWT is stored in `sessionStorage` and sent via `Authorization` header).
 
 ---
 
