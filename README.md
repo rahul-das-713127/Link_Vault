@@ -342,17 +342,13 @@ Notes:
 
 ## Assumptions and Limitations
 
-- This is a take-home/demo style app; not production hardened.
-- Default CORS allows only `FRONTEND_ORIGIN`.
 - Password protection is implemented via bcrypt hash comparison and a custom header (`x-share-password`).
-- Share IDs are random, but no rate limiting / brute-force protection is included.
 - No email verification / password resets.
 - Tokens are stored in `sessionStorage` (tab-scoped) for the demo UX; closing the tab logs you out.
 - Manual delete is intentionally strict for owned shares:
   - If `owner_user_id` exists, only the owner JWT can delete (delete token is ignored).
 - No HTTPS enforcement (intended for local dev).
 - No CSRF protection (JWT is stored in `sessionStorage` and sent via `Authorization` header).
-- File type validation is allowlist-based only when configured.
 
 ---
 
